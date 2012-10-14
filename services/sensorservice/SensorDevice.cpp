@@ -103,6 +103,7 @@ ANDROID_SINGLETON_STATIC_INSTANCE(BatteryService)
 ANDROID_SINGLETON_STATIC_INSTANCE(SensorDevice)
 
 #ifdef SYSFS_LIGHT_SENSOR
+#define DUMMY_ALS_HANDLE 0xdeadbeef
 static ssize_t addDummyLightSensor(sensor_t const **list, ssize_t count) {
     struct sensor_t dummy_light =     {
                   name            : "CyanogenMod dummy light sensor",
