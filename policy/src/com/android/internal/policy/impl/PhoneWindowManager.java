@@ -4565,6 +4565,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     public void systemBooted() {
         synchronized (mLock) {
             mSystemBooted = true;
+
+            if (mHeadsetIntent) {
+                Log.e(TAG, "send headset intent after system booted");
+                sendIntents(mHeadsetName);
+            }
         }
     }
 
