@@ -2069,6 +2069,12 @@ public final class Settings {
         public static final String HAPTIC_FEEDBACK_ENABLED = "haptic_feedback_enabled";
 
         /**
+         * Whether the haptic feedback are enabled for statusbar toggles. The value is
+         * boolean (1 or 0).
+         */
+        public static final String HAPTIC_FEEDBACK_TOGGLES_ENABLED = "haptic_feedback_toggles_enabled";
+
+        /**
          * @deprecated Each application that shows web suggestions should have its own
          * setting for this.
          */
@@ -2768,6 +2774,16 @@ public final class Settings {
         /**
          * @hide
          */
+        public static final String STATUSBAR_SETTINGS_BEHAVIOR = "statusbar_settings_behavior";
+
+        /**
+         * @hide
+         */
+        public static final String STATUSBAR_TOGGLES_AUTOHIDE = "statusbar_toggles_autohide";
+
+        /**
+         * @hide
+         */
         public static final String STATUS_BAR_BRIGHTNESS_SLIDER = "statusbar_brightness_slider";
 
         /**
@@ -2957,6 +2973,12 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_STOCK_MUSIC_LAYOUT = "lockscreen_stock_music_layout";
+
+        /**
+         * Whether to use lockscreen theming
+         * @hide
+         */
+        public static final String USE_LOCKSCREEN_THEMES = "use_lockscreen_themes";
 
         /**
          * How to show weather on the statusbar
