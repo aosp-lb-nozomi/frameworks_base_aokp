@@ -47,6 +47,8 @@ import com.android.server.PowerManagerService;
 
 import android.util.Log;
 import android.view.WindowManager;
+import java.io.File;
+import java.io.IOException;
 
 public final class ShutdownThread extends Thread {
     // constants
@@ -490,6 +492,21 @@ public final class ShutdownThread extends Thread {
      */
     public static void rebootOrShutdown(boolean reboot, String reason) {
         if (reboot) {
+         	        // Reboot to TWRP
+	        if (reason != null) {
+			if (reason.equals("cwm")) {
+				Log.d(TAG, "Rebooting to TWRP...");
+				try { 
+					File file = new File("/cache/recovery/boot");
+					if(!file.exists())
+						file.createNewFile();
+				}
+				catch(IOException e) { 
+					Log.d(TAG, "cannot create file?");
+					e.printStackTrace();
+				}
+			}
+		}
             Log.i(TAG, "Rebooting, reason: " + reason);
             try {
                 PowerManagerService.lowLevelReboot(reason);
